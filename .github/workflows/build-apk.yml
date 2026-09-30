@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+defaults:
+  run:
+    working-directory: apk
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -79,7 +83,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: millennium-pos-apk
-          path: dist/*.apk
+          path: apk/dist/*.apk
           retention-days: 30
 
       - name: Publier la version (lien de téléchargement public)
@@ -89,5 +93,5 @@ jobs:
           tag_name: v1.0.${{ github.run_number }}
           name: Millennium POS 1.0.${{ github.run_number }}
           body: Application Android Millennium POS. Téléchargez millennium-pos.apk ci-dessous.
-          files: dist/millennium-pos.apk
+          files: apk/dist/millennium-pos.apk
           make_latest: true
