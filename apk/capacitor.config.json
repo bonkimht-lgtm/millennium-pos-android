@@ -1,0 +1,16 @@
+{
+  "appId": "ht.milleniumgroup.pos",
+  "appName": "Millennium POS",
+  "webDir": "www",
+  "server": {
+    "url": "https://milleniumgrouphaiti.com/pos/caisse",
+    "cleartext": false,
+    "allowNavigation": ["milleniumgrouphaiti.com", "*.milleniumgrouphaiti.com"],
+    "errorPath": "offline.html"
+  },
+  "android": {
+    "allowMixedContent": false,
+    "appendUserAgent": "MillenniumPOS-Android",
+    "backgroundColor": "#07162B"
+  }
+}
